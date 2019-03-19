@@ -20,6 +20,9 @@ import com.wordpress.carledwinti.springboot.dynamodb.api.repository.ContatoRepos
 @EnableDynamoDBRepositories(basePackageClasses = ContatoRepository.class)
 public class DynamoDBConfiguration {
 
+	@Value("${amazon.aws.endpoint}")
+	private String amazonEndpoint;
+	
 	@Value("${amazon.aws.accesskey}")
 	private String amazonAWSAccessKey;
 	
@@ -47,6 +50,14 @@ public class DynamoDBConfiguration {
 	
 	@Bean
 	public AmazonDynamoDB amazonDynamoDB() {
-		return AmazonDynamoDBClientBuilder.standard().withCredentials(amazonAWSCredentialsProvider()).withRegion(Regions.US_EAST_1).build();
+		return AmazonDynamoDBClientBuilder.standard().withCredentials(amazonAWSCredentialsProvider()).withRegion(Regions.US_EAST_2).build();
+	}
+
+	public String getAmazonEndpoint() {
+		return amazonEndpoint;
+	}
+
+	public void setAmazonEndpoint(String amazonEndpoint) {
+		this.amazonEndpoint = amazonEndpoint;
 	}
 }
