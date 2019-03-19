@@ -23,7 +23,7 @@ public class DynamoDBConfiguration {
 	@Value("${amazon.aws.accesskey}")
 	private String amazonAWSAccessKey;
 	
-	@Value("${amazon.awx.secretkey}")
+	@Value("${amazon.aws.secretkey}")
 	private String amazonAWSAWSSecretKey;
 	
 	public AWSCredentialsProvider amazonAWSCredentialsProvider() {
