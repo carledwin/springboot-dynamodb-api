@@ -1,4 +1,4 @@
-package com.wordpress.carledwinti.springboot.dynamodb;
+package com.wordpress.carledwinti.springboot.dynamodb.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
